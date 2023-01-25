@@ -1,0 +1,115 @@
+//function movetiles is gonna take the diretcions DIR gonna handle moving the tiles, if we moving to left, we need to update (up/down etc)
+//movetiles is gonna go thru each one and is gonna move each tile individually
+//move func is gonna predict the position its gonna be in, if it can combine or if it can move--is gonna return true
+//we made it for every direction
+//we create this function moveTiles that takes in a diretcion, depending on the direction it will set
+//the horizontal direction either negative or gpositive or/and it's gonna set the vertical direction
+//depending on which way we're going, it;s either gonna update from left to right, right
+//to left, up to down or down to up and we're just gonna move that individual tile
+
+//function boolean move that takes in a row and a column, a hordir and a verdir,and one of our DIR
+//it gets the current tile, check if current's null, then we can't do anything, we can't move this tile
+//if its not null we create this boolean called move
+//we create a while loop that says while the tile is able to move(combine or slide to an empty tile,
+//and hasn't reached one of the walls, then we check if it;s out of bounds
+
+//method checkoutOfBounds--gonna go thru all directions, is gonna take the dir, is gonna check to see
+//which way you're trying to go. if you go letf, then you have to check on the left side if its out of bounds
+//go back to funct move--if we havent broken out of loope we have to check a couple of things
+//the new place im going to i going to equal to whatever the current tile is and theold place is gonna
+//be set to null and the board at the new row, new column is gonna slide to another point
+/*
+board[newRow][newCol]=current;
+        board[newRow-verticalDirection][newCol-horizontalDirection]=null;
+        board[newRow][newCol].setSlideTo(new Point(newRow,newCol));*/
+//chekc deAD:
+gonna go thru this double for loop , if the sapce is null, then thats an open space and we can move there
+otherwise were gonna check the surroundinf tiles and see if they can combine
+check surrounding tiles:
+takes in a roe, a col and a tile
+if the row is 0, dont check off the row
+
+GAMEBOARD:
+private void reset position thts takes in the current tile, the row and the col
+if current is null then we cant move it
+while the tile is moving its gonna get the x of the row and colunn and its gonna see where your x is
+
+GAMELOOP
+game class:
+
+class start is gonna start the initial thread
+class game:
+extends jpanel, panel used for drawing on, added directly to the frame and its gonna implement keylistener, and runnable
+contains the final static integers like the wodth of the screen and the height, wont be changed
+like the font used for everything,
+contains a gamne thread, a variable to keep track of the game variable to see if its running,
+for starting and starting the thread,
+and a buffered image, where all the drwaing will be made on
+starttime: of keeping track of if we should update
+
+constructor of game:
+setFocusable to true: allows keybooard input to be set
+setPreffered size: will determine how big the frame is
+keryListener
+
+2 methods:
+update:----
+render:
+create the graphics 2d g object
+then we create another object 2d g graphics equal to the first thats gonna be the actual
+Jpanel that were gonna draw the image to, and we dispose it
+
+the graphics object is how you draw to an image and this image is a virtual image
+that were storing on memory that keeps track of evrygting were drwaing on the screem(where were gonna drwa
+all the actual game pieces to the game board
+then when were done drawing to the image, then its gonna get the graphics of the jpanel
+and draw the final image to the jpanel, so it an be visible to the user
+
+
+run:
+fps to 0, update=0(it will print hoe many updates in frame per sec were getting
+when you first run, its gonna set al the var to 0, its gonna chek whule its running
+
+
+THE TILE CLASS:
+referes to a single game tile
+we have the width and pixels of the tile,
+the speed of whch they move across of when you slide them, we got variables that only the tiles know about:
+value, the actual tile image, rhe backgr color, text color, an x and a y, and a font.
+
+we have a method to draw the image where we get the grapics element of the tile image,
+and where we set different colors for every value
+
+DRAW UTILS class
+has 2 helper methods
+to be able to get the message width to center it on the screen
+it will go ahead and see how wide the message is(64) so then we can center it on the tile
+
+KEYBOARD:
+have a static class called keyboard that keeps thta keeps track of all pressed events
+and returned if its typed,pressed or released:
+
+
+we make a provate constructor(because its a static class
+we need 2 static boolean arrays pressed prev
+
+method keypressed is gonna be passed straight from the game class
+
+
+THE GAMEBOARD CLASS
+the mastermind, the class that does all the manipulating of the tiles, it decides
+if you cabn move, if youre dead, where to spawn in the next tile etc
+
+
+enum direction
+to keep track if youre going uo down left or right
+
+the update method: calls checkkeys: check for keyboard inputs
+
+
+
+
+
+
+
+
